@@ -12,4 +12,6 @@ module API
 	TRANSFER_PATH = "/transfer"
 	SETTLEMENT_PATH = "/settlement"
 	REFUND_PATH = "/refund"
+	PRODUCT_PATH = "/product"
+	PAYMENT_PAGE_PATH = "/page"
 end
