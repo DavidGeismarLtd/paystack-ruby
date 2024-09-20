@@ -14,6 +14,8 @@ require 'paystack/objects/recipients.rb'
 require 'paystack/objects/transfers.rb'
 require 'paystack/objects/subaccounts.rb'
 require 'paystack/objects/refunds.rb'
+require 'paystack/objects/payment_pages.rb'
+require 'paystack/objects/products.rb'
 
 class Paystack
   attr_reader :public_key, :private_key

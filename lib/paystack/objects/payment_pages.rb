@@ -28,6 +28,13 @@ class PaystackPaymentPages < PaystackBaseObject
 		initPutRequest(paystackObj,"#{API::PAYMENT_PAGE_PATH}/#{payment_page_id}",  data)
 	end
 
+  def PaystackPaymentPages.add_products(paystackObj, payment_page_id, data)
+    initPostRequest(paystackObj,"#{API::PAYMENT_PAGE_PATH}/#{payment_page_id}/product", data)
+  end
+
+  def PaystackPaymentPages.get(paystackObj, payment_page_id)
+    initGetRequest(paystackObj, "#{API::PAYMENT_PAGE_PATH}/#{payment_page_id}")
+  end
 
   def PaystackPaymentPages.create(paystackObj, data={})
     initPostRequest(paystackObj, "#{API::PAYMENT_PAGE_PATH}", data, true)
