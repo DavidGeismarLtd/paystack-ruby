@@ -38,7 +38,7 @@ class PaystackBaseObject
     rescue JSON::ParserError => jsonerr
       raise PaystackServerError.new(response), "Invalid result data. Could not parse JSON response body\n#{jsonerr.message}"
     rescue PaystackServerError => e
-      Utils.serverErrorHandler(e)
+      ::Utils.serverErrorHandler(e)
     end
 
     result
