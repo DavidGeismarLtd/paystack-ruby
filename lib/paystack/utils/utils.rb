@@ -87,13 +87,13 @@ module Utils
 		error = PaystackServerError.new(e.response);
 		case e.response.code
 				when 400
-					raise error, "HTTP Code 400: A validation or client side error occurred and the request was not fulfilled. "
+					raise error, "HTTP Code 400: A validation or client side error occurred and the request was not fulfilled. Message : #{e.response.body}"
 				when 401
-					raise error, "HTTP Code 401: The request was not authorized. This can be triggered by passing an invalid secret key in the authorization header or the lack of one"
+					raise error, "HTTP Code 401: The request was not authorized. This can be triggered by passing an invalid secret key in the authorization header or the lack of one. Message : #{e.response.body}"
 				when 404
-					raise error, "HTTP Code 404: Request could not be fulfilled as the request resource does not exist."
+					raise error, "HTTP Code 404: Request could not be fulfilled as the request resource does not exist. Message : #{e.response.body}"
 				when 500, 501,502,503,504
-					raise error, "HTTP Code #{e.response.code}: Request could not be fulfilled due to an error on Paystack's end. This shouldn't happen so please report as soon as you encounter any instance of this."
+					raise error, "HTTP Code #{e.response.code}: Request could not be fulfilled due to an error on Paystack's end. This shouldn't happen so please report as soon as you encounter any instance of this. Message : #{e.response.body}"
 				else
 					raise error, "HTTP Code #{e.response.code}: #{e.response.body}"
 					
