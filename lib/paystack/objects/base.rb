@@ -54,7 +54,7 @@ class PaystackBaseObject
         'Accept' => 'application/json'
       }
 
-      body = json ? data.to_json : data
+      body = data.to_json
 
       response = self.post(
         url,
